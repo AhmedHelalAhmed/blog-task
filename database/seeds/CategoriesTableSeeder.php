@@ -11,6 +11,13 @@ class CategoriesTableSeeder extends Seeder
      */
     public function run()
     {
-        factory(Category::class, 5)->create();
+        if(DB::table('categories')->get()->count() == 0)
+        {
+            factory(Category::class, 5)->create();
+        }
+        else
+        {
+            echo "Error ! there is 5 Categories to test";
+        }
     }
 }
