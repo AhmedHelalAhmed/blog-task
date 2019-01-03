@@ -36,7 +36,22 @@
                 <div class="collapse navbar-collapse" id="app-navbar-collapse">
                     <!-- Left Side Of Navbar -->
                     <ul class="nav navbar-nav">
-                        &nbsp;
+                            <li class="active">
+                                <a href="#">Category1 <span class="sr-only">(current)</span></a>
+                            </li>
+                            <li><a href="#">Category2</a></li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">More <span class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="#">Category3</a></li>
+                                    <li><a href="#">Category3</a></li>
+                                    <li><a href="#">Category4</a></li>
+                                    <li role="separator" class="divider"></li>
+                                    <li><a href="#">Category5</a></li>
+                                    <li role="separator" class="divider"></li>
+                                    <li><a href="#">Category6</a></li>
+                                </ul>
+                            </li>
                     </ul>
 
                     <!-- Right Side Of Navbar -->
