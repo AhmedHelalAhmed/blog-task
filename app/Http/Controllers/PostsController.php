@@ -26,7 +26,7 @@ class PostsController extends Controller
 
         try
         {
-            $data = Post::with("user")->get();
+            $data = Post::with("user","category")->orderBy('created_at', 'DESC')->paginate(7);
         }
         catch (\Exception $e)
         {

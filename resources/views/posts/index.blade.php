@@ -33,6 +33,11 @@
                                 </div>
                             </div>
                         @endforeach
+                        <!-- Start Pagination -->
+                            <div aria-label="Page navigation" class="rumors-pagination text-center">
+                                {{ $posts->links() }}
+                            </div>
+                        <!-- End Pagination -->
 
 
                     </div>
