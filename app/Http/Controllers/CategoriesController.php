@@ -4,10 +4,17 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Category;
+use View;
 use App\Http\Requests\{StoreCategoryRequest,UpdateCategoryRequest};
 class CategoriesController extends Controller
 {
 
+    public function __construct()
+    {
+        // Fetch the Site Settings object
+        $categories = Category::all();
+        View::share('categories', $categories);
+    }
 
     /**
      * Show the form for creating a new resource.
@@ -38,7 +45,17 @@ class CategoriesController extends Controller
      */
     public function show($id)
     {
-        //
+        try {
+            $data = Category::findOrFail($id);
+        }catch (\Exception $e)
+        {
+            return response()->json([
+                'message' => $e->getMessage(),
+            ], 500);
+        }
+
+
+        return view('categories.show', ['category' => $data]);
     }
 
     /**

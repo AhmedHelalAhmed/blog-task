@@ -26,7 +26,7 @@
                                         <a
                                                 class="btn btn-primary pull-right"
                                                 href="{{url("/posts/".$post->id)}}"
-                                           role="button">Show more »
+                                           role="button"> Show more »
                                         </a>
                                     </p>
 
