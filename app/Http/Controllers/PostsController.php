@@ -2,11 +2,20 @@
 
 namespace App\Http\Controllers;
 
+use App\Category;
 use Illuminate\Http\Request;
 use App\Http\Requests\{StorePostRequest,UpdatePostRequest};
-
+use App\Post;
+use View;
 class PostsController extends Controller
 {
+    public function __construct()
+    {
+        // Fetch the Site Settings object
+        $categories = Category::all();
+        View::share('categories', $categories);
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -14,7 +23,19 @@ class PostsController extends Controller
      */
     public function index()
     {
-        //
+
+        try
+        {
+            $data = Post::with("user")->get();
+        }
+        catch (\Exception $e)
+        {
+            return response()->json([
+                'message' => $e->getMessage(),
+            ], 500);
+        }
+
+        return view('posts.index', ['posts' => $data]);
     }
 
     /**
@@ -46,7 +67,18 @@ class PostsController extends Controller
      */
     public function show($id)
     {
-        //
+        try {
+            $data = Post::findOrFail($id);
+//            dd($data);
+        }catch (\Exception $e)
+        {
+            return response()->json([
+                'message' => $e->getMessage(),
+            ], 500);
+        }
+
+        return view('posts.show', ['post' => $data]);
+
     }
 
     /**

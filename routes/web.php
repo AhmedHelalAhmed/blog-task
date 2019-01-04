@@ -17,6 +17,8 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
-
 Route::resource('categories', 'CategoriesController',['except'=> ['index']]);
+
+Route::resource('posts', 'PostsController',['except'=> ['index']]);
+
+Route::get('/home', 'PostsController@index')->name('home');
