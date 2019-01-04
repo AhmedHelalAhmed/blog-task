@@ -18,7 +18,7 @@
                                 <p class="lead">{{ $post->description }}</p>
                                 <p class="well">{{ $post->content }}</p>
                                 <p>{{ $post->user->name }}</p>
-                                <p class="badge pull-right">{{ $post->category->name }}</p>
+                                <a href="{{ url("/categories/".$post->category->id) }}"><p class="badge pull-right">{{ $post->category->name }}</p></a>
                                 <p class="label label-info small">{{ $post->updated_at->diffForHumans() }}</p>
                             </div>
 

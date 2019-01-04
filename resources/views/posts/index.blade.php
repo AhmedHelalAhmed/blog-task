@@ -21,7 +21,7 @@
                                     <p class="well">{{substr($post->description,0,300)}}</p>
 
                                     <p>
-                                        <span class="badge ">{{$post->category->name}}</span>
+                                        <a href="{{ url("/categories/".$post->category->id) }}"><span class="badge">{{$post->category->name}}</span></a>
 
                                         <a
                                                 class="btn btn-primary pull-right"
