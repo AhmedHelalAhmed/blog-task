@@ -13,10 +13,8 @@ class CreateCategoriesTest extends TestCase
     function guests_may_not_create_posts()
     {
         $this->withExceptionHandling();
-        // create post page
         $this->get('/admin/categories/create')
             ->assertRedirect('/login');
-        // store thread data
         $this->post('/admin/categories')
             ->assertRedirect('/login');
     }

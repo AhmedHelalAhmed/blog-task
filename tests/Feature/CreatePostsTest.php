@@ -19,10 +19,8 @@ class CreatePostsTest extends TestCase
     function guests_may_not_create_posts()
     {
         $this->withExceptionHandling();
-        // create post page
         $this->get('/admin/posts/create')
             ->assertRedirect('/login');
-        // store thread data
         $this->post('/admin/posts')
             ->assertRedirect('/login');
     }
@@ -80,18 +78,15 @@ class CreatePostsTest extends TestCase
     /** @test */
     function a_post_requires_a_category()
     {
-        //to test the failure if the category exist in memory which is testing database configured
-        factory(Category::class,2)->create();//give channel_id = 1 or 2
+        factory(Category::class,2)->create();
         $this->publishPost(['category_id' => null])
             ->assertSessionHasErrors('category_id');
-
     }
 
     /** @test */
     function a_post_requires_an_exists_category()
     {
-        //to test the failure if the category exist in memory which is testing database configured
-        factory(Category::class,2)->create();//give channel_id = 1 or 2
+        factory(Category::class,2)->create();
         $this->publishPost(['category_id' => 99999999])
             ->assertSessionHasErrors('category_id');
     }

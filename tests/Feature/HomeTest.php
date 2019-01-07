@@ -23,7 +23,6 @@ class HomeTest extends TestCase
     function guests_may_not_browse_home()
     {
         $this->withExceptionHandling();
-        // create post page
         $this->get('/home')
             ->assertRedirect('/login');
     }

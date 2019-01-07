@@ -23,7 +23,6 @@ class UpdateCategoriesTest extends TestCase
     function guests_may_not_update_posts()
     {
         $this->withExceptionHandling();
-        // create post page
         $this->put('/admin/categories/'.$this->category->id)
             ->assertRedirect('/login');
     }
