@@ -1,0 +1,23 @@
+.has-error
+{
+    border : 2px solid red;
+}
+.has-no-error
+{
+    border : 2px solid green;
+}
+.success
+{
+    color: green;
+}
+.danger
+{
+    color: red;
+}
+.capital-first-letter {
+    text-transform: capitalize;
+}
+
+.break-word {
+    word-wrap: break-word;
+}

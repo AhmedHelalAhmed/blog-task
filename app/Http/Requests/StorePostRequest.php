@@ -13,7 +13,7 @@ class StorePostRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,25 @@ class StorePostRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'title'=>'required|min:35|max:70|unique:posts',
+            'description'=>'required|min:10|max:100',
+            'content' => 'required|min:100',
+            'category_id' => [
+                'exists:categories,id'
+            ],
+        ];
+    }
+
+
+    /**
+     * Custom message for validation
+     *
+     * @return array
+     */
+    public function messages()
+    {
+        return [
+            'category_id.exists' => 'You have to select category.',
         ];
     }
 }

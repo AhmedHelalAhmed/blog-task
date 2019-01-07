@@ -17,8 +17,18 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::resource('categories', 'CategoriesController',['except'=> ['index']]);
+Route::resource('categories', 'CategoriesController')->only('show')->middleware('auth');
 
-Route::resource('posts', 'PostsController',['except'=> ['index']]);
+Route::resource('posts', 'PostsController')->only(['show','index'])->middleware('auth');
 
-Route::get('/home', 'PostsController@index')->name('home');
+Route::get('/home', 'PostsController@index')->name('home')->middleware('auth');
+
+Route::resource('/admin', 'AdminController')
+    ->only('index')->middleware(['auth','admin']);
+
+Route::resource('/admin/posts', 'AdminPostsController')
+    ->only(['index','create',"store","edit","update","destroy"])->middleware(['auth','admin']);
+
+Route::resource('/admin/categories', 'AdminCategoriesController')
+    ->only(['index','create',"store","edit","update","destroy"])->middleware(['auth','admin']);
+

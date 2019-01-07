@@ -13,21 +13,14 @@
                         @endif
 
 
-                            <div class="jumbotron">
-                                <h1>{{ $post->title }}</h1>
-                                <p class="lead">{{ $post->description }}</p>
+                            <div class="jumbotron break-word">
+                                <h3><u>{{ $post->title }}</u></h3>
+                                <p class="lead"><em>{{ $post->description }}</em></p>
                                 <p class="well">{{ $post->content }}</p>
-                                <p>{{ $post->user->name }}</p>
+                                <p class="btn-default">Posted by: <strong>{{ $post->user->name }}</strong></p>
                                 <a href="{{ url("/categories/".$post->category->id) }}"><p class="badge pull-right">{{ $post->category->name }}</p></a>
                                 <p class="label label-info small">{{ $post->updated_at->diffForHumans() }}</p>
                             </div>
-
-
-
-
-
-
-
 
                     </div>
                 </div>

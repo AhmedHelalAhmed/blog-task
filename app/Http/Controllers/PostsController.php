@@ -4,14 +4,12 @@ namespace App\Http\Controllers;
 
 use App\Category;
 use Illuminate\Http\Request;
-use App\Http\Requests\{StorePostRequest,UpdatePostRequest};
 use App\Post;
 use View;
 class PostsController extends Controller
 {
     public function __construct()
     {
-        // Fetch the Site Settings object
         $categories = Category::all();
         View::share('categories', $categories);
     }
@@ -30,34 +28,20 @@ class PostsController extends Controller
         }
         catch (\Exception $e)
         {
+            // for production
+            return view('errors.404',['error'=>$e->getMessage()]);
+
+            // for debug
+            /*
             return response()->json([
                 'message' => $e->getMessage(),
             ], 500);
+            */
         }
 
         return view('posts.index', ['posts' => $data]);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(StorePostRequest $request)
-    {
-        //
-    }
 
     /**
      * Display the specified resource.
@@ -69,49 +53,22 @@ class PostsController extends Controller
     {
         try {
             $data = Post::findOrFail($id);
-//            dd($data);
         }catch (\Exception $e)
         {
+            // for production
+            return view('errors.404',['error'=>$e->getMessage()]);
+
+            // for debug
+            /*
             return response()->json([
                 'message' => $e->getMessage(),
             ], 500);
+            */
         }
 
         return view('posts.show', ['post' => $data]);
 
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(UpdatePostRequest $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
-    }
 }

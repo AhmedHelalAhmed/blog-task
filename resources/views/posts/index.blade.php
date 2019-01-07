@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="container">
+    <div class="container break-word">
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
                 <div class="panel panel-default">
@@ -21,11 +21,13 @@
                                     <p class="well">{{substr($post->description,0,300)}}</p>
 
                                     <p>
-                                        <a href="{{ url("/categories/".$post->category->id) }}"><span class="badge">{{$post->category->name}}</span></a>
+                                        <a href="{{ url("/categories/".$post->category->id) }}">
+                                            <span class="badge">{{$post->category->name}}</span>
+                                        </a>
 
                                         <a
-                                                class="btn btn-primary pull-right"
-                                                href="{{url("/posts/".$post->id)}}"
+                                            class="btn btn-primary pull-right"
+                                            href="{{url("/posts/".$post->id)}}"
                                            role="button"> Show more »
                                         </a>
                                     </p>

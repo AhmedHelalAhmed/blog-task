@@ -12,6 +12,7 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="{{ asset('css/custom.css') }}">
 </head>
 <body>
 <div id="app">
@@ -53,7 +54,10 @@
                             <ul class="dropdown-menu">
                                 @foreach( $categories as $key=>$category)
                                     @if($key>=7)
-                                        <li><a href="{{ url("/categories/".$category->id) }}">{{$category->name}}</a>
+                                        <li>
+                                            <a href="{{ url("/categories/".$category->id) }}">
+                                                {{$category->name}}
+                                            </a>
                                         </li>
                                     @endif
                                 @endforeach
@@ -89,6 +93,15 @@
                                         {{ csrf_field() }}
                                     </form>
                                 </li>
+
+
+                                @if(\App\User::isAdmin())
+                                    <li>
+                                        <a href="{{ url("/admin") }}">
+                                            Dashboard
+                                        </a>
+                                    </li>
+                                @endif
                             </ul>
                         </li>
                     @endguest
@@ -96,8 +109,9 @@
             </div>
         </div>
     </nav>
-
     @yield('content')
+
+
 </div>
 
 <!-- Scripts -->
