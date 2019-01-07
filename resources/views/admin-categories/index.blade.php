@@ -26,9 +26,9 @@
         <tbody>
         @foreach($categories as $category)
             <tr data-category="{{$category->id}}">
-                <td scope="row"><a href="{{url("/categories/".$category->id)}}">{{$category->name}}</a></td>
+                <td scope="row"><a href="{{$category->path()}}">{{$category->name}}</a></td>
                 <td>
-                    <a href="{{ url("/admin/categories/".$category->id."/edit") }}"
+                    <a href="{{ url("/admin".$category->path()."/edit") }}"
                        class="btn btn-info">
                         <i class="fa fa-edit"></i>
                     </a>

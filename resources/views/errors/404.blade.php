@@ -33,7 +33,7 @@
             <h1>404</h1>
         </div>
         <h2>Oops! This Page Could Not Be Found</h2>
-        @if($error)
+        @if(isset($error))
             <div>
                 <h3 class="capital-first-letter">info</h3>
                 <div class="info">

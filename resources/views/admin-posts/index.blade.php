@@ -26,9 +26,9 @@
         <tbody>
         @foreach($posts as $post)
             <tr data-post="{{$post->id}}">
-                <td scope="row"><a href="{{url("/posts/".$post->id)}}">{{$post->title}}</a></td>
+                <td scope="row"><a href="{{ $post->path()}}">{{$post->title}}</a></td>
                 <td>
-                    <a href="{{ url("/admin/posts/".$post->id."/edit") }}"
+                    <a href="{{ url("/admin".$post-> path()."/edit") }}"
                        class="btn btn-info">
                         <i class="fa fa-edit"></i>
                     </a>

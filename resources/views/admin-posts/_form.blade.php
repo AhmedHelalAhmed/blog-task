@@ -1,7 +1,7 @@
 <div class="form-group">
     <label for="title">
         <span class="capital-first-letter">title</span>
-        <code><span class="capital-first-letter">required</span>. at least 35 characters and at most 70 characters</code>
+        <code><span class="capital-first-letter">required</span>. at least 3 characters and at most 70 characters</code>
     </label>
     <input
             id="title"
@@ -10,7 +10,7 @@
             type="text"
             class="form-control"
             placeholder="Enter title..."
-            required minlength=35 maxlength=70 />
+            required minlength=3 maxlength=70 />
     <span id="title-feedback" class="help-block"></span>
 </div>
 <div class="form-group">

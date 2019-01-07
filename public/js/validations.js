@@ -22,11 +22,11 @@ $( document ).ready(function() {
             return false;
         }
         let charactersInTitle=titleValue.length;
-        // title is min 35
-        if(charactersInTitle<35)
+        // title is min 3
+        if(charactersInTitle<3)
         {
             title.addClass("has-error");
-            titleFeedback.text("Title must be 35 characters at least");
+            titleFeedback.text("Title must be 3 characters at least");
             titleFeedback.addClass("danger");
             return false;
         }

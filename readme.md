@@ -37,15 +37,16 @@ simple blog is a web application enable you to view categories and its posts and
 ## RESTRICTIONS
 
 ### post: 
-- post title: required, unique, min length: 35 characters and max length: 70 characters.
+- post title: required, unique, min length: 3 characters and max length: 70 characters.
 - post description: required, min length: 35 characters and max length: 100 characters.
 - post content: required, min length: 100 characters.
 - post category: required, must exist before.
-- when delete a post it will be hard deleted
+- when delete a post it will be hard deleted.
+- to see posts you have to be logged in.
 
 ### category: 
 - post name: required, unique and min length: 3 characters.
-- when delete a category it will be hard deleted with all its posts.
+- when delete a category it will be hard deleted. with all its posts.
 
 ### admin dashboard:
 - the user with id = 1 will be the admin and it generated from seed with email: admin@laravel.com and password: admin so the system has only one admin in this release.

@@ -30,7 +30,7 @@ class UpdatePostRequest extends FormRequest
         return [
             'title' => [
                 'required',
-                'min:35',
+                'min:3',
                 'max:70',
                 Rule::unique('posts')->ignore($post->title, 'title')
             ],
