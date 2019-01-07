@@ -77,13 +77,13 @@ DB_DATABASE=blog_task<br/>
 DB_USERNAME=your username<br/>
 DB_PASSWORD=your password<br/>
 in .env file<br/>
-then copy and paste the following commands
-``php artisan config:clear``
-``php artisan view:clear``
-``php artisan migrate``
-``php artisan migrate``
-``php artisan db:seed ``
-``php artisan serv ``
+then copy and paste the following commands <br/>
+``php artisan config:clear`` <br/>
+``php artisan view:clear`` <br/>
+``php artisan migrate`` <br/>
+``php artisan migrate`` <br/>
+``php artisan db:seed `` <br/>
+``php artisan serv `` <br/>
 then open the url: http://localhost:8000 and here we go.
 
 
