@@ -25,21 +25,36 @@ class UpdatePostRequest extends FormRequest
      */
     public function rules()
     {
-        $id = $this->route('post');
-        $post = Post::find($id);
-        return [
-            'title' => [
-                'required',
-                'min:3',
-                'max:70',
-                Rule::unique('posts')->ignore($post->title, 'title')
-            ],
-            'description' => 'required|min:10|max:100',
-            'content' => 'required|min:100',
-            'category_id' => [
-                'exists:categories,id'
-            ],
-        ];
+
+        try {
+            $id = $this->route('post');
+            $post = Post::find($id);
+            return [
+                'title' => [
+                    'required',
+                    'min:3',
+                    'max:70',
+                    Rule::unique('posts')->ignore($post->title, 'title')
+                ],
+                'description' => 'required|min:10|max:100',
+                'content' => 'required|min:100',
+                'category_id' => [
+                    'exists:categories,id'
+                ],
+            ];
+        }catch (\Exception $e)
+        {
+            // for production
+            return view('errors.404',['error'=>$e->getMessage()]);
+
+            // for debug
+            /*
+            return response()->json([
+                'message' => $e->getMessage(),
+            ], 500);
+            */
+        }
+
     }
     
     /**

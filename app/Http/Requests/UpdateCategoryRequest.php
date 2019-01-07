@@ -24,14 +24,29 @@ class UpdateCategoryRequest extends FormRequest
      */
     public function rules()
     {
-        $id = $this->route('category');
-        $category = Category::find($id);
-        return [
-            'name' => [
-                'required',
-                'min:3',
-                Rule::unique('categories')->ignore($category->name, 'name')
-            ],
-        ];
+
+        try {
+            $id = $this->route('category');
+            $category = Category::find($id);
+            return [
+                'name' => [
+                    'required',
+                    'min:3',
+                    Rule::unique('categories')->ignore($category->name, 'name')
+                ],
+            ];
+        }catch (\Exception $e)
+        {
+            // for production
+            return view('errors.404',['error'=>$e->getMessage()]);
+
+            // for debug
+            /*
+            return response()->json([
+                'message' => $e->getMessage(),
+            ], 500);
+            */
+        }
+
     }
 }
