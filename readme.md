@@ -51,7 +51,7 @@ simple blog is a web application enable you to view categories and its posts and
 -the user with id = 1 will be the admin and it generated from seed with email: admin@laravel.com and password: admin so the system has only one admin in this release.
 
 
-##[Server Requirements](https://laravel.com/docs/5.5/installation) 
+## [Server Requirements](https://laravel.com/docs/5.5/installation) 
 - Apache Web Server 
 - PHP >= 7.0.0
 - OpenSSL PHP Extension
@@ -61,7 +61,7 @@ simple blog is a web application enable you to view categories and its posts and
 - XML PHP Extension
 
 
-##Installing Simple Blog
+## Installing Simple Blog
 - open terminal and copy this 
 ``https://github.com/AhmedHelalAhmed/blog-task.git``
 and paste it then press enter and do all the steps with the same terminal.
