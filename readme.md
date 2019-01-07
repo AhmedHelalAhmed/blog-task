@@ -48,7 +48,7 @@ simple blog is a web application enable you to view categories and its posts and
 - when delete a category it will be hard deleted with all its posts.
 
 ### admin dashboard:
--the user with id = 1 will be the admin and it generated from seed with email: admin@laravel.com and password: admin so the system has only one admin in this release.
+- the user with id = 1 will be the admin and it generated from seed with email: admin@laravel.com and password: admin so the system has only one admin in this release.
 
 
 ## [Server Requirements](https://laravel.com/docs/5.5/installation) 
