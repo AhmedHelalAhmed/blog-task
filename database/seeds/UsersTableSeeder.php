@@ -14,7 +14,7 @@ class UsersTableSeeder extends Seeder
         // check if table users is empty
         if(DB::table('users')->get()->count() == 0)
         {
-            echo "Admin User created with username : admin@laravel.com and password : admin";
+            echo "\nAdmin User created with username : admin@laravel.com and password : admin\n";
             factory(User::class) -> create([
                 'name'     => 'admin',
                 'email'    => "admin@laravel.com",
@@ -23,7 +23,7 @@ class UsersTableSeeder extends Seeder
         }
         else
         {
-            echo "Admin created before then 5 normal user will be created";
+            echo "\nAdmin created before then 5 normal user will be created\n";
             factory(User::class, 5)->create();
         }
     }

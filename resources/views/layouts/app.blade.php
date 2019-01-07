@@ -44,7 +44,7 @@
                         {{--</li>--}}
                         {{--we need to optmize here the performance--}}
                         @foreach( $categories as $key=>$category)
-                            @if($key<7)
+                            @if($key<3)
                                 <li><a href="{{ url("/categories/".$category->id) }}">{{$category->name}}</a></li>
                             @endif
                         @endforeach
@@ -53,7 +53,7 @@
                                aria-haspopup="true" aria-expanded="false">More <span class="caret"></span></a>
                             <ul class="dropdown-menu">
                                 @foreach( $categories as $key=>$category)
-                                    @if($key>=7)
+                                    @if($key>=3)
                                         <li>
                                             <a href="{{ url("/categories/".$category->id) }}">
                                                 {{$category->name}}
