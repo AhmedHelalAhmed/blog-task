@@ -4,6 +4,8 @@
 
 simple blog is a web application enable you to view categories and its posts and have admin panel where you can crud over posts and categories made by technologies:
 
+
+
 - [Laravel 5.5](https://laravel.com/) as backend.
 - [Adminlte dashboard](https://adminlte.io/).
 - [Bootstrap 3.3](https://getbootstrap.com/docs/3.3).
@@ -86,7 +88,9 @@ then copy and paste the following commands <br/>
 ``php artisan serv `` <br/>
 then open the url: http://localhost:8000 and here we go.
 
-
+## Demo
+the website deployed in [Heroku](https://heroku.com/apps) connected with postgres database
+[Simple Blog Demo](http://simple-blog-task.herokuapp.com)
 
 ## Security Vulnerabilities
 
