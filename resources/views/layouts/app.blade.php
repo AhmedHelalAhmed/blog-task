@@ -45,7 +45,7 @@
                         {{--we need to optmize here the performance--}}
 
                         @for($i =0;$i <count($categories)&&$i < 3; $i++)
-                                <li><a href="{{ url("/categories/".$categories[$i]->id) }}">{{$category->name}}</a></li>
+                                <li><a href="{{ url("/categories/".$categories[$i]->id) }}">{{$categories[$i]->name}}</a></li>
                         @endfor
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
