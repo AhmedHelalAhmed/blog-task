@@ -35,7 +35,8 @@ $( document ).ready(function() {
         if(title.val()===oldTitle.val()&&oldDescription.val()===description.val()&&oldContent.val()===content.val()&&category.val()===oldCategory.val())
         {
             // alert("no change happened");
-            window.location.href("/admin/posts");
+            window.location.assign("/admin/posts")
+
         }
 
 
@@ -165,7 +166,7 @@ $( document ).ready(function() {
         if(oldCategoryName.val()===categoryName.val())
         {
             // alert("no change happened");
-            window.location.href("/admin/categories");
+            window.location.assign("/admin/categories")
         }
 
 
