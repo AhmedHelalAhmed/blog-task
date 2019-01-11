@@ -4,12 +4,12 @@ $( document ).ready(function() {
 
     // for performance when click edit redirect with out request if the data does not modified at all
     // for post
-    let oldTitle=$("#title");
-    let oldDescription=$("#description");
-    let oldContent=$("#content");
-    let oldCategory=$("#category");
+    let oldTitle=$("#title").val();
+    let oldDescription=$("#description").val();
+    let oldContent=$("#content").val();
+    let oldCategory=$("#category").val();
     // for category
-    let oldCategoryName=$("#category-name");
+    let oldCategoryName=$("#category-name").val();
 
 
 
@@ -18,7 +18,7 @@ $( document ).ready(function() {
 
 
 
-    
+
     $("#submit-btn").on("click",function(e){
         e.preventDefault();
         // inputs
@@ -32,10 +32,12 @@ $( document ).ready(function() {
         let categoryFeedback=$("#category-feedback");
 
         // for performance
-        if(title===oldTitle&&oldDescription===description&&oldContent===content&&category===oldCategory)
+        if(title.val()===oldTitle&&oldDescription===description.val()&&oldContent===content.val()&&category.val()===oldCategory)
         {
-            alert("no change happened");
-            window.location.replace("/admin/posts");
+            // alert("no change happened");
+            window.location.assign("/admin/posts");
+            return false;
+
         }
 
 
@@ -162,10 +164,11 @@ $( document ).ready(function() {
 
 
         // for performance
-        if(oldCategoryName===categoryName)
+        if(oldCategoryName===categoryName.val())
         {
-            alert("no change happened");
-            window.location.replace("/admin/categories");
+            // alert("no change happened");
+            window.location.assign("/admin/categories")
+            return false;
         }
 
 
@@ -199,11 +202,11 @@ $( document ).ready(function() {
         $("#category-form").submit();
 
     });
-    
-    
-    
-    
-    
+
+
+
+
+
 
 });
 
