@@ -34,8 +34,8 @@ $( document ).ready(function() {
         // for performance
         if(title.val()===oldTitle.val()&&oldDescription.val()===description.val()&&oldContent.val()===content.val()&&category.val()===oldCategory.val())
         {
-            alert("no change happened");
-            // window.location.replace("/admin/posts");
+            // alert("no change happened");
+            window.location.replace("/admin/posts");
         }
 
 
@@ -164,8 +164,8 @@ $( document ).ready(function() {
         // for performance
         if(oldCategoryName.val()===categoryName.val())
         {
-            alert("no change happened");
-            // window.location.replace("/admin/categories");
+            // alert("no change happened");
+            window.location.replace("/admin/categories");
         }
 
 
