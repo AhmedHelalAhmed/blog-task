@@ -43,24 +43,21 @@
                         {{--<a href="#">Category1 <span class="sr-only">(current)</span></a>--}}
                         {{--</li>--}}
                         {{--we need to optmize here the performance--}}
-                        @foreach( $categories as $key=>$category)
-                            @if($key<3)
-                                <li><a href="{{ url("/categories/".$category->id) }}">{{$category->name}}</a></li>
-                            @endif
-                        @endforeach
+
+                        @for($i =0;$i <count($categories)&&$i < 3; $i++)
+                                <li><a href="{{ url("/categories/".$categories[$i]->id) }}">{{$category->name}}</a></li>
+                        @endfor
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
                                aria-haspopup="true" aria-expanded="false">More <span class="caret"></span></a>
                             <ul class="dropdown-menu">
-                                @foreach( $categories as $key=>$category)
-                                    @if($key>=3)
+                                @for($i =3;$i <count($categories)&&$i >=3; $i++)
                                         <li>
                                             <a href="{{ url("/categories/".$category->id) }}">
                                                 {{$category->name}}
                                             </a>
                                         </li>
-                                    @endif
-                                @endforeach
+                                @endfor
                             </ul>
                         </li>
 
