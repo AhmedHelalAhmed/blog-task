@@ -1,4 +1,23 @@
 $( document ).ready(function() {
+
+
+
+    // for performance when click edit redirect with out request if the data does not modified at all
+    // for post
+    let oldTitle=$("#title");
+    let oldDescription=$("#description");
+    let oldContent=$("#content");
+    let oldCategory=$("#category");
+    // for category
+    let oldCategoryName=$("#category-name");
+
+
+
+
+
+
+
+
     
     $("#submit-btn").on("click",function(e){
         e.preventDefault();
@@ -11,6 +30,17 @@ $( document ).ready(function() {
         let contentFeedback=$("#content-feedback");
         let category=$("#category");
         let categoryFeedback=$("#category-feedback");
+
+        // for performance
+        if(title===oldTitle&&oldDescription===description&&oldContent===content&&category===oldCategory)
+        {
+            alert("no change happened");
+            window.location.replace("/admin/posts");
+        }
+
+
+
+
         // validate title
         // title is required
         let titleValue=title.val().trim();//remove spaces
@@ -129,7 +159,16 @@ $( document ).ready(function() {
         // input
         let categoryName=$("#category-name");
         let categoryNameFeedback=$("#category-name-feedback");
-        
+
+
+        // for performance
+        if(oldCategoryName===categoryName)
+        {
+            alert("no change happened");
+            window.location.replace("/admin/categories");
+        }
+
+
         // validate name
         // name is required
         let nameValue=categoryName.val().trim();//remove spaces
@@ -165,18 +204,7 @@ $( document ).ready(function() {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+
 });
 
 
