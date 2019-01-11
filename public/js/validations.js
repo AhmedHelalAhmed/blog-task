@@ -32,10 +32,10 @@ $( document ).ready(function() {
         let categoryFeedback=$("#category-feedback");
 
         // for performance
-        if(title===oldTitle&&oldDescription===description&&oldContent===content&&category===oldCategory)
+        if(title.val()===oldTitle.val()&&oldDescription.val()===description.val()&&oldContent.val()===content.val()&&category.val()===oldCategory.val())
         {
             alert("no change happened");
-            window.location.replace("/admin/posts");
+            // window.location.replace("/admin/posts");
         }
 
 
@@ -162,10 +162,10 @@ $( document ).ready(function() {
 
 
         // for performance
-        if(oldCategoryName===categoryName)
+        if(oldCategoryName.val()===categoryName.val())
         {
             alert("no change happened");
-            window.location.replace("/admin/categories");
+            // window.location.replace("/admin/categories");
         }
 
 
