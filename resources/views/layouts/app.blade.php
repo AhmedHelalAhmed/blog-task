@@ -53,8 +53,8 @@
                             <ul class="dropdown-menu">
                                 @for($i =3;$i <count($categories)&&$i >=3; $i++)
                                         <li>
-                                            <a href="{{ url("/categories/".$category->id) }}">
-                                                {{$category->name}}
+                                            <a href="{{ url("/categories/".$categories[$i]->id) }}">
+                                                {{$categories[$i]->name}}
                                             </a>
                                         </li>
                                 @endfor
